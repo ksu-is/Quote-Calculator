@@ -30,32 +30,30 @@ window.mainloop()
 
 from tkinter import *
 
-while (forward == "no"):
+window = Tk()
+window.title("Quote Calculator")
+window.configure(background="black")
 
-  window = Tk()
-  window.title("Quote Calculator")
-  window.configure(background="black")
+Label (window, text="Name of Product: ", bg="black", fg="white", font="roman 40").grid(row=1, column=0, sticky=W)
+product = StringVar()
+product_entry = Entry(window, textvariable=product, width=30, bg="white")
+product_entry.grid(row=1, column=80, sticky=E)
 
-  Label (window, text="Name of Product: ", bg="black", fg="white", font="roman 40").grid(row=1, column=0, sticky=W)
-  product = StringVar()
-  product_entry = Entry(window, textvariable=product, width=30, bg="white")
-  product_entry.grid(row=1, column=80, sticky=E)
+Label (window, text="Price: ", bg="black", fg="white", font="roman 40").grid(row=41, column=0, sticky=W)
+price = DoubleVar()
+price_entry = Entry(window, textvariable=price, width=30, bg="white")
+price_entry.grid(row=41, column=80, sticky=E)
 
-  Label (window, text="Price: ", bg="black", fg="white", font="roman 40").grid(row=41, column=0, sticky=W)
-  price = DoubleVar()
-  price_entry = Entry(window, textvariable=price, width=30, bg="white")
-  price_entry.grid(row=41, column=80, sticky=E)
+Label (window, text="Quantity: ", bg="black", fg="white", font="roman 40").grid(row=81, column=0, sticky=W)
+quantity = IntVar()
+quantity_entry = Entry(window, textvariable=quantity, width=30, bg="white")
+quantity_entry.grid(row=81, column=80, sticky=E)
 
-  Label (window, text="Quantity: ", bg="black", fg="white", font="roman 40").grid(row=81, column=0, sticky=W)
-  quantity = IntVar()
-  quantity_entry = Entry(window, textvariable=quantity, width=30, bg="white")
-  quantity_entry.grid(row=81, column=80, sticky=E)
-    
-  Button(window, text="Submit", width=30).grid(row=120, column=80, sticky=E)
+Button(window, text="Submit", width=30).grid(row=120, column=80, sticky=E)
 
-  calculate = price.get() * quantity.get()
+calculate = price.get() * quantity.get()
 
-  Button(window, text="Add Another Product", width=30).grid(row=120,column=0, sticky=W)
+Button(window, text="Add Another Product", width=30).grid(row=120,column=0, sticky=W)
 
 window.mainloop()
 
@@ -80,4 +78,3 @@ Label (window, text = total, bg="black", fg="white", font="roman 40")
 Button(window, text="Restart", width=30).grid(row=120,column=0, sticky=W)
   
 window.mainloop()
-
